@@ -1,0 +1,135 @@
+body{
+    background-color: rgba(209, 104, 250, 0.726);
+}
+
+.head-div{
+    margin: auto;
+    width: 50%;
+}
+
+h1{
+    text-align: center;
+    font-size: 70px;
+    background-color: rgba(209, 104, 250, 0.89);
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.new-movie{
+    text-align: center;
+    border: solid;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: rgba(209, 104, 250, 0.884);
+    margin: auto;
+    width: max-content;
+    margin-bottom: 30px;
+    padding: 12px;
+}
+
+.new-movie:hover{
+    background-color: rgba(228, 161, 255, 0.966);
+    cursor: pointer;
+}
+
+.new-movie:active{
+    background-color: rgba(76, 39, 90, 0.884)
+}
+
+.new-entry{
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background-color:rgba(84, 236, 229, 1);
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    margin: -200px 0 0 -300px;
+    border: solid;
+    border-radius: 30px;
+}
+
+.title-form{
+    position: absolute;
+    height: 100px;
+    width: 400px;
+    font-size: 40px;
+    top: 10%;
+    left: 50%;
+    margin-left: -200px;
+}
+
+.director-form{
+    position: absolute;
+    height: 100px;
+    width: 400px;
+    font-size: 40px;
+    top: 40%;
+    left: 50%;
+    margin-left: -200px;
+}
+
+.submit-button{
+    position: absolute;
+    height: 75px;
+    width: 280px;
+    background-color:rgb(162, 247, 242);
+    left: 50%;
+    bottom: 7%;
+    margin-left: -140px;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 3px;
+    border: solid;
+    border-radius: 30px;
+}
+
+.submit-button:hover{
+    cursor: pointer;
+    background-color: rgb(208, 252, 250);
+}
+
+.submit-button:active{
+    background-color: rgb(65, 134, 130);
+}
+
+.card{
+    border: solid;
+    border-width: 5px;
+    float: left;
+    margin: 10px;
+    border-radius: 60px;
+    text-align: center;
+    padding: 30px 0;
+    padding-right: 50px;
+    padding-left: 50px;
+    background-color: rgba(81, 185, 180, 0.726);
+    font-size: 30px;
+}
+
+.remove-movie{
+    font-size: 20px;
+    border: solid;
+    border-radius: 30px;
+    background-color: rgb(138, 16, 16);
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    width: max-content;
+    padding: 7px;
+}
+
+.remove-movie:hover{
+    background-color: rgb(172, 112, 112);
+    cursor: pointer;
+}
+
+.remove-movie:active{
+    background-color: rgb(75, 17, 17);
+}
+
+.title{
+    font-weight: bold;
+    padding-bottom: 10px;
+}
