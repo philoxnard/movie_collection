@@ -62,3 +62,8 @@ $(".content").on("click", '.remove-movie', function(){
     let div = $(this).parent()
     div.remove();
 })
+
+// TODO: Find a way to fix the following problem:
+//          Removing an entry currently only erases the div, but leaves the actual
+//          list untouched. Need to find a way to get the appropriate index from
+//          the remove button. Somehow find the info within those divs? Not sure.
