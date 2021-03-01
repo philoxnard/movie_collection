@@ -31,7 +31,16 @@ function displayCollection(){
                     </div>"
         msg += card
     }
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("data", msg);
+        document.getElementById("content").innerHTML = localStorage.getItem("data")
+    }
     $(".content").html(msg)
+}
+
+function removeEntry(title){
+    let index = myMovieCollection.indexOf(title)
+    myMovieCollection.splice(title, 1)
 }
 
 $('.new-movie').on("click", function(e) {
@@ -59,8 +68,10 @@ $('body').on("click", '.submit-button', function(e){
 })
 
 $(".content").on("click", '.remove-movie', function(){
-    let div = $(this).parent()
-    div.remove();
+    let parentDiv = $(this).parent()
+    let title = $(parentDiv).find('.title').text()
+    removeEntry(title)
+    displayCollection()
 })
 
 // TODO: Find a way to fix the following problem:
