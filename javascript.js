@@ -13,12 +13,6 @@ Movie.prototype.addToCollection = function(){
     myMovieCollection.push(this)
 }
 
-let bookNum = 0
-
-const movie1 = new Movie("Jaws", "Steven Spielberg")
-const movie2 = new Movie("Avatar", "James Cameron")
-const movie3 = new Movie("Shaun of the Dead", "Edgar Wright")
-
 function displayCollection(){
     let msg = ""
     for (let movie of myMovieCollection) {
@@ -31,15 +25,11 @@ function displayCollection(){
                     </div>"
         msg += card
     }
-    if (typeof(Storage) !== "undefined") {
-        localStorage.setItem("data", msg);
-        document.getElementById("content").innerHTML = localStorage.getItem("data")
-    }
+    localStorage.setItem("movies", JSON.stringify(myMovieCollection));
     $(".content").html(msg)
 }
 
 function removeEntry(title){
-    let index = myMovieCollection.indexOf(title)
     myMovieCollection.splice(title, 1)
 }
 
@@ -60,8 +50,8 @@ $('body').on("click", '.submit-button', function(e){
     e.preventDefault()
     let title = document.getElementById('title').value;
     let director = document.getElementById('director').value;
-    const movie4 = new Movie(title, director)
-    movie4.addToCollection()
+    const movie = new Movie(title, director)
+    movie.addToCollection()
     displayCollection()
     let div = document.getElementById('new-entry')
     div.remove();
@@ -74,7 +64,8 @@ $(".content").on("click", '.remove-movie', function(){
     displayCollection()
 })
 
-// TODO: Find a way to fix the following problem:
-//          Removing an entry currently only erases the div, but leaves the actual
-//          list untouched. Need to find a way to get the appropriate index from
-//          the remove button. Somehow find the info within those divs? Not sure.
+let storage = JSON.parse(localStorage.getItem("movies"))
+for (movie of storage){
+    myMovieCollection.push(movie)
+}
+displayCollection()
