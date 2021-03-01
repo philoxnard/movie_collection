@@ -5,10 +5,6 @@ function Movie(title, director){
     this.director = director
 }
 
-Movie.prototype.info = function(){
-    console.log(`${this.title} was directed by ${this.director}`)
-}
-
 Movie.prototype.addToCollection = function(){
     myMovieCollection.push(this)
 }
@@ -30,7 +26,12 @@ function displayCollection(){
 }
 
 function removeEntry(title){
-    myMovieCollection.splice(title, 1)
+    for (let movie of myMovieCollection){
+        if (movie.title == title){
+            let index = myMovieCollection.indexOf(movie)
+            myMovieCollection.splice(index, 1)
+        }
+    }
 }
 
 $('.new-movie').on("click", function(e) {
